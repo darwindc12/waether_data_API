@@ -18,14 +18,14 @@ The data used in this application is a small subset of the Global Historical Cli
 - stations.txt : Contains metadata about the weather stations
 - TG_STAIDXXXXXX.txt : Contains daily temperature data for a given station. The XXXXXX in the file name is the station id.
 
-#Code Structure
+# Code Structure
 - app.py : The main file that runs the Flask application
 - home.html : The template for the home page
 
-#Note
+# Note
 - All the date in the code is in the format of yyyymmdd
 
-#Future improvements
+# Future improvements
 - Add error handling for invalid date and station id
 - Add pagination for all_data and annual endpoint
 - Add support for more data and more parameters.
