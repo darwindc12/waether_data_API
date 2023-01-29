@@ -1,14 +1,31 @@
 # Temperature Data API using Flask and Pandas
-This script creates a Flask web app with several routes, each returning temperature data from a CSV file using pandas. One route returns temperature data for a specific station and date, another all data for a specific station, and another returns annual data for a specific station and year.
-# What I Learned?
-- How to use the Flask web framework to create a web application.
-- How to use pandas to read and manipulate data from a CSV file.
-- How to use pandas to filter and select specific rows from a DataFrame.
-- How to use pandas to convert DataFrame to dictionary.
-- How to use pandas to work with date and time data.
-- How to define routes in a Flask application and handle URL parameters.
-- How to use the Jinja2 template engine to render HTML templates in a Flask application.
-- How to return data as JSON from a Flask application.
-- How to use the debug mode in Flask to aid in development.
-- How to use the zfill() method to format string.
-- How to use the str.startswith() method to filter data based on a string prefix.
+This is a Flask web application that provides a simple API for weather data. The application reads weather data from CSV files and provides the data in JSON format via API endpoints.
+
+Getting Started
+- Make sure you have Flask and pandas library installed.
+- Clone the repository and navigate to the root folder of the project.
+- Run the command flask run to start the application.
+- The application will be available at http://localhost:5000/
+# API Endpoints
+/ : The home page that displays the list of stations
+/api/v1/<station>/<date> : Returns temperature data for the given station and date
+/api/v1/<station> : Returns all temperature data for the given station
+/api/v1/annual/<station>/<year> : Returns annual temperature data for the given station and year
+
+# Data
+The data used in this application is a small subset of the Global Historical Climatological Network Daily (GHCND) dataset. The data is stored in the data_small folder. The folder contains two files:
+
+- stations.txt : Contains metadata about the weather stations
+- TG_STAIDXXXXXX.txt : Contains daily temperature data for a given station. The XXXXXX in the file name is the station id.
+
+#Code Structure
+- app.py : The main file that runs the Flask application
+- home.html : The template for the home page
+
+#Note
+- All the date in the code is in the format of yyyymmdd
+
+#Future improvements
+- Add error handling for invalid date and station id
+- Add pagination for all_data and annual endpoint
+- Add support for more data and more parameters.
